@@ -20,6 +20,15 @@
                 grid-template-rows: 64px 9fr;
             }
 
+            .sub_container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+
             .header {
                 background-color: black;
                 grid-column-start: 1;
@@ -82,6 +91,31 @@
             <a class="basket" href="http://192.168.1.148/">
                 Корзина
             </a>
+
+            <div class="sub_container">
+
+                <?php
+                    $json = file_get_contents("http://192.168.1.148/api/product");
+                    $products = json_decode($json, true);
+
+                    foreach ($products as $product) {
+                        echo "<div>";
+
+                        echo "<p>" . "Товар: " . $product["name"] . "</p>";
+                        echo "<p>" . "Информация: ". $product["info"] . "</p>";
+
+                        if ($product["count"] == null) {
+                            echo "<p>" . "Под заказ." . "</p>";
+                        }
+                        else {
+                            echo "<p>" . "Остаток: " . $product["count"] . "</p>";
+                        }
+                        
+                        echo "</div>";
+                    }
+                ?>
+
+            </div>
 
         </div>
 
