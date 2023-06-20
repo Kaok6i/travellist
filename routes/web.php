@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('/basket', function () {
     return view('basket');
 });
+Route::get('/categories', function () {
+    return view('categories');
+});
 Route::get('/catalog', function () {
     return view('catalog');
 });
