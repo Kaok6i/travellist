@@ -27,6 +27,7 @@
                 grid-column-end: 4;
                 grid-row-start: 2;
                 grid-row-end: 3;
+                grid-gap: 16px;
             }
 
             .header {
