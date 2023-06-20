@@ -1,47 +1,62 @@
-body {
-    padding-top: 40px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.starter-template {
-    padding: 20px 15px;
-    text-align: center;
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 64px 9fr;
 }
 
-table {
-    text-align: left;
+.sub_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-gap: 16px;
 }
 
-div.thumbnail img {
-    max-height: 200px;
+.header {
+    background-color: black;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
-div.form-inline form {
-    display: inline;
+.all_products {
+    font-size: 32px;
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    justify-content: center;
 }
 
-div.labels {
-    position: absolute;
+.categories {
+    font-size: 32px;
+    color: white;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    justify-content: center;
 }
 
-div.labels span.badge {
-    display: block;
-}
-
-span.badge.badge-success {
-    color: #fff;
-    background-color: #28a745;
-}
-
-span.badge.badge-warning {
-    color: #fff;
-    background-color: #dc3545;
-}
-
-span.badge.badge-danger {
-    color: #212529;
-    background-color: #ffc107;
-}
-
-div.filters {
-    padding-bottom: 5px;
+.basket {
+    font-size: 32px;
+    color: white;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    justify-content: center;
 }
