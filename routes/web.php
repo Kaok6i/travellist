@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,4 +31,5 @@ Route::get('/company', function () {
 });
 Route::get('/contacts', function () {
     return view('contacts');
-});
+}); 
+//Route::get('brands',[TestController::class,'index']);

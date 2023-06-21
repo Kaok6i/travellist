@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
+
     <head>
-        <link rel="stylesheet" href="/css/contacts.css">
+
         <title>Контакты</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/css/contacts.css">
+
     </head>
-        <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+    <body>
 
-        </body>
-</html> 
+<header>
+    <nav>
+<ul class="menu">
+    <li><a href="/">Главная</a></li>
+    <li><a href="/contacts">Контакты</a></li>
+</ul>
+    </nav>
+</header>
+
+        <div class="container">
+          
+
+        </div>
+
+    </body>
+
+</html>
