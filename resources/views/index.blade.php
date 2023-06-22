@@ -18,57 +18,6 @@
       <link rel="stylesheet" href="assets/css/main.css">
    </head>
    <body>
-      <!-- cart mini area start -->
-      <div class="cartmini__area tp-all-font-roboto">
-         <div class="cartmini__wrapper d-flex justify-content-between flex-column">
-             <div class="cartmini__top-wrapper">
-                 <div class="cartmini__top p-relative">
-                     <div class="cartmini__top-title">
-                         <h4>Shopping cart</h4>
-                     </div>
-                     <div class="cartmini__close">
-                         <button type="button" class="cartmini__close-btn cartmini-close-btn"><i class="fal fa-times"></i></button>
-                     </div>
-                 </div>
-                 <div class="cartmini__widget">
-                     <div class="cartmini__widget-item">
-                         <div class="cartmini__thumb">
-                           <a href="product-details.html">
-                              <img src="assets/img/product/product-1.jpg" alt="">
-                           </a>
-                         </div>
-                         <div class="cartmini__content">
-                           <h5 class="cartmini__title"><a href="product-details.html">Level Bolt Smart Lock</a></h5>
-                           <div class="cartmini__price-wrapper">
-                              <span class="cartmini__price">$46.00</span>
-                              <span class="cartmini__quantity">x2</span>
-                           </div>
-                         </div>
-                         <a href="#" class="cartmini__del"><i class="fa-regular fa-xmark"></i></a>
-                     </div>
-                 </div>
-                 <!-- for wp -->
-                 <!-- if no item in cart -->
-                 <div class="cartmini__empty text-center d-none">
-                     <img src="assets/img/product/cartmini/empty-cart.png" alt="">
-                     <p>Your Cart is empty</p>
-                     <a href="shop.html" class="tp-btn">Go to Shop</a>
-                 </div>
-             </div>
-             <div class="cartmini__checkout">
-                 <div class="cartmini__checkout-title mb-30">
-                     <h4>Subtotal:</h4>
-                     <span>$113.00</span>
-                 </div>
-                 <div class="cartmini__checkout-btn">
-                     <a href="cart.html" class="tp-btn mb-10 w-100"> view cart</a>
-                     <a href="checkout.html" class="tp-btn tp-btn-border w-100"> checkout</a>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <!-- cart mini area end -->
-
       <!-- header area start -->
       <header>
          <div class="tp-header-area p-relative z-index-11">
@@ -78,7 +27,7 @@
                   <div class="row align-items-center">
                      <div class="col-xl-2 col-lg-2 col-md-4 col-6">
                         <div class="logo">
-                           <a href="index.html">
+                           <a href="main">
                               <img src="assets/img/logo/logo.svg" alt="logo">
                            </a>
                         </div>
@@ -143,22 +92,13 @@
                            <div class="main-menu menu-style-1">
                               <nav class="tp-main-menu-content">
                                  <ul>
-                                    <li>
-                                       <a href="index.html">Главная</a>
-                                    </li>
-                                    <li>
-                                       <a href="shop.html">Каталог</a>
-                                    </li>
-                                    <li>
-                                       <a href="shop.html">О компании</a>
-                                    </li>
-                                    <li>
-                                       <a href="shop.html">Контакты</a>
-                                    </li>
+                                    <li><a href="main">Главная</a></li>
+                                    <li><a href="catalog">Каталог</a></li>
+                                    <li><a href="about">О компании</a></li>
+                                    <li><a href="contacts">Контакты</a></li>
                               </nav>
                            </div>
                         </div>
-                        
                      </div>
                   </div>
                </div>
@@ -189,7 +129,7 @@
                         <div class="tab-content" id="myTabContent">
                            <div class="tab-pane fade show active" id="new-tab-pane" role="tabpanel" aria-labelledby="new-tab" tabindex="0">
                               <div class="row">
-
+                              @foreach ($data as $d)
                                  <div class="col-xl-3 col-lg-3 col-sm-6">
                                     <div class="tp-product-item p-relative transition-3 mb-25">
                                        <div class="tp-product-thumb p-relative fix m-img">
@@ -200,11 +140,11 @@
                                        <!-- product content -->
                                        <div class="tp-product-content">
                                           <div class="tp-product-category">
-                                             <a href="catalog.html">Категория</a>
+                                             <a href="catalog.html">{{ $d->category}}</a>
                                           </div>
                                           <h3 class="tp-product-title">
                                              <a href="product-details.html">
-                                                Название товара
+                                                {{ $d->name}}
                                              </a>
                                           </h3>
                                           <div class="tp-product-price-wrapper">
@@ -216,7 +156,7 @@
                                        </div>
                                     </div>
                                  </div>
-
+                                 @endforeach
                                  <div class="col-xl-3 col-lg-3 col-sm-6">
                                     <div class="tp-product-item transition-3 mb-25">
                                        <div class="tp-product-thumb p-relative fix m-img">
